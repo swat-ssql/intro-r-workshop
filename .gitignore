@@ -1,0 +1,14 @@
+# RStudio / R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Quarto build leftovers
+.quarto/
+*_files/
+*.knit.md
+*.typ
+
+# macOS
+.DS_Store

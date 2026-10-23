@@ -1,0 +1,147 @@
+/*-- scss:defaults --*/
+
+$ink: #1b2430;
+$paper: #fbfaf7;
+$accent: #0f6e73;
+$accent-dark: #0a4f53;
+$warm: #c9760a;
+$muted: #5c6773;
+$tint: #e8f1f1;
+
+$body-bg: $paper;
+$body-color: $ink;
+$link-color: $accent;
+$link-color-hover: $accent-dark;
+
+$font-family-sans-serif: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+$presentation-font-size-root: 34px;
+$presentation-line-height: 1.35;
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-color: $ink;
+$presentation-heading-font-weight: 700;
+$presentation-heading-line-height: 1.15;
+$presentation-h1-font-size: 2.1em;
+$presentation-h2-font-size: 1.45em;
+$presentation-h3-font-size: 1.1em;
+$presentation-title-slide-text-align: left;
+$code-color: $accent-dark;
+
+/*-- scss:rules --*/
+
+.reveal h2 {
+  border-bottom: 3px solid $accent;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h3 { color: $accent-dark; }
+
+/* inline code: soft chip */
+.reveal :not(pre) > code {
+  background: $tint;
+  border-radius: 4px;
+  padding: 0.05em 0.3em;
+  font-size: 0.88em;
+}
+
+/* code blocks */
+.reveal div.sourceCode {
+  border-radius: 8px;
+  margin: 0.5em 0;
+}
+.reveal pre { font-size: 0.72em; width: 100%; }
+.reveal pre code {
+  font-size: 1em;
+  padding: 0.7em 0.9em;
+  max-height: none;
+}
+
+/* section (part) divider slides */
+.reveal .slide.part {
+  text-align: left;
+}
+.reveal .slide.part h1 {
+  color: #fff;
+  font-size: 2.6em;
+  margin-bottom: 0.2em;
+}
+.reveal .slide.part p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1em;
+}
+
+/* title slide */
+.reveal .title-slide h1.title { font-size: 2.4em; }
+.reveal .title-slide .subtitle { color: $accent; font-weight: 600; }
+.reveal .title-slide .quarto-title-author-name,
+.reveal .title-slide .quarto-title-affiliation { color: $muted; }
+
+/* big statement text */
+.reveal .big { font-size: 1.25em; }
+.reveal .muted { color: $muted; }
+
+/* simple cards */
+.reveal .card {
+  background: #fff;
+  border: 1px solid #dfe3e6;
+  border-top: 5px solid $accent;
+  border-radius: 8px;
+  padding: 0.6em 0.9em;
+  height: 100%;
+}
+.reveal .card.warm { border-top-color: $warm; }
+.reveal .card h3 { margin-top: 0; }
+.reveal .card p, .reveal .card ul { margin: 0.25em 0; }
+
+/* tables */
+.reveal table {
+  font-size: 0.78em;
+  border-collapse: collapse;
+}
+.reveal table th {
+  background: $tint;
+  border-bottom: 2px solid $accent;
+}
+.reveal table td, .reveal table th { padding: 0.35em 0.7em; }
+
+/* thumbnails on the data slide */
+.reveal img.thumb {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  border: 1px solid #dfe3e6;
+  margin: 0;
+}
+
+/* checkpoint list */
+.reveal ul.task-list { list-style: none; margin-left: 0; }
+.reveal ul.task-list li { margin: 0.45em 0; font-size: 1.05em; }
+.reveal ul.task-list input { transform: scale(1.4); margin-right: 0.6em; }
+
+/* tabs */
+.reveal .panel-tabset .nav-link { font-weight: 600; }
+
+/* callouts a bit tighter */
+.reveal .callout { margin: 0.7em 0; font-size: 0.85em; }
+
+/* step tag */
+.reveal .stepno {
+  display: inline-block;
+  background: $accent;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.05em 0.6em;
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  vertical-align: 0.1em;
+}
+
+/* denser code slides */
+.reveal section.tight pre { font-size: 0.66em; }
+
+/* make comments and printed output (#>) easy to read on the dark code blocks */
+.reveal pre code span.co { color: #b4c2d6 !important; font-style: normal; }
