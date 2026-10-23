@@ -51,6 +51,20 @@ Let's get set up
 Goal for this block: everyone leaves it with R, RStudio, tidyverse and a working Quarto render to HTML and PDF. Walk around, look at screens.
 :::
 
+## <span class="stepno">1</span> Get the workshop files
+
+Everything for today is in one place:
+
+**[github.com/swat-ssql/intro-r-workshop](https://github.com/swat-ssql/intro-r-workshop)**
+
+1. Open the link, click the green **Code** button, then **Download ZIP**
+2. **Unzip** it somewhere you'll find it again (not inside Downloads)
+3. Keep the page open: the **README** links to the R and RStudio downloads we need next
+
+::: {.notes}
+The repo is public, so no GitHub account is needed. If a student unzips to Downloads, ask them to move the folder first, since projects inside Downloads are easy to lose. The README's Software table has the CRAN and RStudio download links.
+:::
+
 ## The two things you're installing
 
 ::: {.columns}
@@ -74,13 +88,13 @@ This is the program you'll open.
 :::
 :::
 
-**Order matters: install R first, then RStudio.**
+**Order matters: install R first, then RStudio.** Both download links are in the repo's README.
 
 ::: {.notes}
 Analogy: R is the engine, RStudio is the dashboard. You never open R directly; you open RStudio and it drives R for you.
 :::
 
-## <span class="stepno">1</span> Install R
+## <span class="stepno">2</span> Install R
 
 ::: {.panel-tabset}
 
@@ -110,13 +124,12 @@ Say yes to installing the command line tools. Already have them? You're set.
 Mac: the Apple silicon vs Intel choice is the most common stumble. Windows: Rtools is only needed for packages compiled from source, so skip it unless an error asks for it. If a stray R icon lands on the desktop, ignore it; we only open RStudio.
 :::
 
-## <span class="stepno">2</span> Install RStudio
+## <span class="stepno">3</span> Install RStudio
 
 1. Go to [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/)
-2. Download the installer for your computer and run it
-   - **Mac:** open the `.dmg` and drag RStudio into Applications
-   - **Windows:** run the `.exe`
-3. Open **RStudio** (not "R") and type this into the **Console** (bottom left), then press Enter:
+2. Download the installer and run it (Mac: drag RStudio into Applications)
+3. Double-click **`intro-r-workshop.Rproj`** to open the project
+4. Type this into the **Console** (bottom left) and press Enter:
 
 ```r
 R.version.string
@@ -124,15 +137,14 @@ R.version.string
 ```
 
 ::: {.callout-tip}
-## If you see an R version, RStudio and R are talking to each other.
-Two icons on your desktop or dock? Keep **RStudio**. You'll never open the plain R app.
+## An R version means RStudio and R are talking. The Files pane should list `handout.qmd`.
 :::
 
 ::: {.notes}
-Expected output depends on when they installed; anything 4.5 or newer is fine for today. RStudio also installs a copy of Quarto, which we check in step 4.
+Expected output depends on when they installed; anything 4.5 or newer is fine for today. RStudio also installs a copy of Quarto, which we check in step 5. Opening the .Rproj sets RStudio's working directory to the project folder, which the handout needs for relative paths like data/subset_saf.csv.
 :::
 
-## <span class="stepno">3</span> Install the tidyverse
+## <span class="stepno">4</span> Install the tidyverse
 
 ```r
 install.packages("tidyverse", repos = "https://cloud.r-project.org")
@@ -152,7 +164,7 @@ You should see **"Attaching core tidyverse packages"** and a list of packages.
 The repos argument avoids the "CRAN mirror not set" error mentioned in the handout. A Conflicts message after library(tidyverse) is normal. Installing the tidyverse also installs the packages Quarto needs to run R code (knitr, rmarkdown), which is why this comes before the Quarto check.
 :::
 
-## <span class="stepno">4</span> Check that Quarto works
+## <span class="stepno">5</span> Check that Quarto works
 
 You'll need **Quarto** to turn a `.qmd` file into a finished document. **RStudio already includes it**, so there's nothing extra to download.
 
@@ -173,13 +185,13 @@ Quarto has been bundled with RStudio since version 2022.07.1 (per Posit's docs),
 
 Hand up if any of these aren't green:
 
-- [ ] RStudio opens and `R.version.string` prints a version
+- [ ] The workshop project is open (the Files pane shows `handout.qmd`)
+- [ ] `R.version.string` prints a version
 - [ ] `library(tidyverse)` runs without an error
 - [ ] A test Quarto document renders to HTML and to PDF (`format: typst`)
-- [ ] You have the workshop folder: **REPO_URL**
 
 ::: {.notes}
-Get the workshop files: GitHub repo, green Code button, then Download ZIP; unzip it somewhere sensible (not inside Downloads). The tour can start while stragglers finish.
+The tour can start while stragglers finish.
 :::
 
 # Part 2 {.part background-color="#0f6e73" transition="slide"}
@@ -229,6 +241,36 @@ Press **Render** to build it.
 **Rule of thumb: if you want to keep it, it goes in a file.**
 :::
 
+## Can I only use R in a Quarto file in RStudio?
+
+**No.** R is the same everywhere. Only the place you type changes.
+
+::: {.fragment}
+| Where | Good for |
+|:-----------------------------|:-------------------------------------|
+| **R console**: the Console pane, or type `R` in a terminal | quick experiments |
+| **Script** (`.R`) | just code; run a line at a time or the whole file |
+| **Quarto** (`.qmd`) | code + writing + results in one document |
+| **Other editors**: Positron, VS Code | same R in a different workspace |
+:::
+
+::: {.fragment}
+```bash
+Rscript handout_code.R     # run a whole script from a terminal
+```
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## See the difference
+`handout_code.R` in the repo holds the same code as `handout.qmd`, as a plain script. Open them side by side.
+:::
+:::
+
+::: {.notes}
+The point: a Quarto file is one way to organize R work, not a requirement. Scripts hold only code (comments start with #); Quarto mixes code and prose and produces a finished document. Both can be run in RStudio, in Positron or VS Code, or from the command line (Rscript runs a script; quarto render builds a .qmd). Have students open handout_code.R and handout_guide.qmd side by side and compare.
+:::
+
 ## Quarto: code, writing, and results together
 
 ````markdown
@@ -260,7 +302,7 @@ Quarto is the successor to R Markdown, made by Posit. It also makes slides (this
 `getwd()` tells you which folder R is looking in right now.
 
 ::: {.incremental}
-- Open the workshop as a **Project**: File → Open Project → pick the `.Rproj` file
+- Open the workshop as a **Project**: double-click `intro-r-workshop.Rproj` (or File → Open Project)
 - Now file paths are relative to the project folder:
 :::
 
@@ -378,6 +420,21 @@ Code along. Students type or copy each snippet into a new script or into handout
 
 **NYC stop-and-frisk.** Your questions at the end.
 :::
+:::
+
+## Follow along in the handout
+
+::: {.incremental}
+1. Open **`handout.qmd`** (in the project you opened earlier) and put your name in the header
+2. Work **top to bottom**: run each chunk with the green ▶ (or **⌘/Ctrl + Shift + Enter**) and read the output
+3. **Run the code as I show it.** The vectors-to-pipes code is already in the handout
+4. Some chunks are blank on purpose. `handout_guide.pdf` shows the finished versions
+5. Do the **Workshop Questions** on your own at the end
+6. **Render** to PDF when you're done
+:::
+
+::: {.notes}
+Cmd/Ctrl + Enter runs the current line or selection; adding Shift runs the whole chunk. Students run the walkthrough code in the handout while you present it on the slides. Suggested pacing for the independent part (guess): reading the disaster-aid data ~15 min, Workshop Questions Q1-Q8 ~20+ min. Circulate and look for working-directory problems first.
 :::
 
 ## Working with vectors
@@ -599,21 +656,6 @@ A good discussion point: the largest drop in raw counts is White voters, but Whi
 
 Your turn
 
-## How to use the handout
-
-::: {.incremental}
-1. Open the **`.Rproj` file** to open the workshop as a Project, then open `handout.qmd`
-2. Put your name in the header
-3. Work **top to bottom**: run each chunk (**⌘/Ctrl + Enter** or the green ▶), and read the output
-4. Fill in the blank chunks. `handout_guide.pdf` shows the finished walk-through section
-5. Do the **Workshop Questions** on your own at the end
-6. **Render** to PDF when you're done
-:::
-
-::: {.notes}
-Suggested pacing (guess): packages and vectors ~10 min (you just did these), reading the disaster-aid data ~15 min, Workshop Questions Q1-Q8 ~20+ min. Circulate and look for working-directory problems first.
-:::
-
 ## Getting unstuck
 
 1. **Built-in help:** `?mean` or `??regression`. The examples at the bottom are the best part.
@@ -644,7 +686,7 @@ When you're stuck:
 <br>
 
 ::: {.muted}
-Workshop files: REPO_URL
+Workshop files: [github.com/swat-ssql/intro-r-workshop](https://github.com/swat-ssql/intro-r-workshop)
 :::
 
 # Part 6 {.part background-color="#0f6e73" transition="slide"}
@@ -694,6 +736,25 @@ Sources: Posit's Positron announcement (Aug 2025) and positron.posit.co. Keep it
 - Keep asking questions: nobody learns R without getting stuck first
 :::
 
+## Keep learning with the SSQL
+
+**Upcoming R workshops.** Register on the SSQL website.
+
+| Date | Workshop |
+|:------------|:-------------------------------------|
+| **Oct. 28** | U.S. Midterm Election Modeling |
+| **Nov. 5, 6** | Exploring Data in R |
+| **Nov. 9, 13** | Data Visualization in R |
+
+::: {.callout-note}
+## Need help with a course or project?
+Schedule an **office hours appointment** at the SSQL for course or project support.
+:::
+
 . . .
 
 **Thank you!**
+
+::: {.notes}
+Workshop dates as provided: Oct. 28 (Midterm Election Modeling), Nov. 5 and 6 (Exploring Data in R), Nov. 9 and 13 (Data Visualization in R). Registration is on the SSQL website. If you want a link or QR code on this slide, add it to the table or callout.
+:::

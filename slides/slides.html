@@ -1151,6 +1151,29 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
+<section id="get-the-workshop-files" class="slide level2">
+<h2><span class="stepno">1</span> Get the workshop files</h2>
+<p>Everything for today is in one place:</p>
+<p><strong><a href="https://github.com/swat-ssql/intro-r-workshop">github.com/swat-ssql/intro-r-workshop</a></strong></p>
+<ol type="1">
+<li>Open the link, click the green <strong>Code</strong> button, then <strong>Download ZIP</strong></li>
+<li><strong>Unzip</strong> it somewhere you’ll find it again (not inside Downloads)</li>
+<li>Keep the page open: the <strong>README</strong> links to the R and RStudio downloads we need next</li>
+</ol>
+<aside class="notes">
+<p>The repo is public, so no GitHub account is needed. If a student unzips to Downloads, ask them to move the folder first, since projects inside Downloads are easy to lose. The README’s Software table has the CRAN and RStudio download links.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
 <section id="the-two-things-youre-installing" class="slide level2">
 <h2>The two things you’re installing</h2>
 <div class="columns">
@@ -1173,7 +1196,7 @@ RStudio
 <p>This is the program you’ll open.</p>
 </div>
 </div></div>
-<p><strong>Order matters: install R first, then RStudio.</strong></p>
+<p><strong>Order matters: install R first, then RStudio.</strong> Both download links are in the repo’s README.</p>
 <aside class="notes">
 <p>Analogy: R is the engine, RStudio is the dashboard. You never open R directly; you open RStudio and it drives R for you.</p>
 <style type="text/css">
@@ -1189,7 +1212,7 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="install-r" class="slide level2">
-<h2><span class="stepno">1</span> Install R</h2>
+<h2><span class="stepno">2</span> Install R</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default href="#tabset-1-1">Mac</a></li><li><a href="#tabset-1-2">Windows</a></li></ul>
 <div class="tab-content">
@@ -1227,15 +1250,12 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="install-rstudio" class="slide level2">
-<h2><span class="stepno">2</span> Install RStudio</h2>
+<h2><span class="stepno">3</span> Install RStudio</h2>
 <ol type="1">
 <li>Go to <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop</a></li>
-<li>Download the installer for your computer and run it
-<ul>
-<li><strong>Mac:</strong> open the <code>.dmg</code> and drag RStudio into Applications</li>
-<li><strong>Windows:</strong> run the <code>.exe</code></li>
-</ul></li>
-<li>Open <strong>RStudio</strong> (not “R”) and type this into the <strong>Console</strong> (bottom left), then press Enter:</li>
+<li>Download the installer and run it (Mac: drag RStudio into Applications)</li>
+<li>Double-click <strong><code>intro-r-workshop.Rproj</code></strong> to open the project</li>
+<li>Type this into the <strong>Console</strong> (bottom left) and press Enter:</li>
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href aria-hidden="true" tabindex="-1"></a>R.version.string</span>
 <span id="cb2-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;R version 4.6.x (...)&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1245,15 +1265,15 @@ display:block!important;
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>If you see an R version, RStudio and R are talking to each other.</strong></p>
+<p><strong>An R version means RStudio and R are talking. The Files pane should list <code>handout.qmd</code>.</strong></p>
 </div>
 <div class="callout-content">
-<p>Two icons on your desktop or dock? Keep <strong>RStudio</strong>. You’ll never open the plain R app.</p>
+
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Expected output depends on when they installed; anything 4.5 or newer is fine for today. RStudio also installs a copy of Quarto, which we check in step 4.</p>
+<p>Expected output depends on when they installed; anything 4.5 or newer is fine for today. RStudio also installs a copy of Quarto, which we check in step 5. Opening the .Rproj sets RStudio’s working directory to the project folder, which the handout needs for relative paths like data/subset_saf.csv.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1267,7 +1287,7 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="install-the-tidyverse" class="slide level2">
-<h2><span class="stepno">3</span> Install the tidyverse</h2>
+<h2><span class="stepno">4</span> Install the tidyverse</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cloud.r-project.org&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Takes a few minutes. Lots of scrolling text is normal.</li>
@@ -1291,7 +1311,7 @@ display:block!important;
 }</style></aside>
 </section>
 <section id="check-that-quarto-works" class="slide level2">
-<h2><span class="stepno">4</span> Check that Quarto works</h2>
+<h2><span class="stepno">5</span> Check that Quarto works</h2>
 <p>You’ll need <strong>Quarto</strong> to turn a <code>.qmd</code> file into a finished document. <strong>RStudio already includes it</strong>, so there’s nothing extra to download.</p>
 <ol type="1">
 <li><strong>File → New File → Quarto Document…</strong>, then click <strong>Create</strong> (leave HTML selected). If it offers to install packages, say <strong>yes</strong></li>
@@ -1329,13 +1349,13 @@ display:block!important;
 <h2>Checkpoint</h2>
 <p>Hand up if any of these aren’t green:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">RStudio opens and <code>R.version.string</code> prints a version</label></li>
+<li><label><input type="checkbox">The workshop project is open (the Files pane shows <code>handout.qmd</code>)</label></li>
+<li><label><input type="checkbox"><code>R.version.string</code> prints a version</label></li>
 <li><label><input type="checkbox"><code>library(tidyverse)</code> runs without an error</label></li>
 <li><label><input type="checkbox">A test Quarto document renders to HTML and to PDF (<code>format: typst</code>)</label></li>
-<li><label><input type="checkbox">You have the workshop folder: <strong>REPO_URL</strong></label></li>
 </ul>
 <aside class="notes">
-<p>Get the workshop files: GitHub repo, green Code button, then Download ZIP; unzip it somewhere sensible (not inside Downloads). The tour can start while stragglers finish.</p>
+<p>The tour can start while stragglers finish.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1407,18 +1427,85 @@ Quarto (<code>.qmd</code>)
 <p><strong>Rule of thumb: if you want to keep it, it goes in a file.</strong></p>
 </div>
 </section>
+<section id="can-i-only-use-r-in-a-quarto-file-in-rstudio" class="slide level2">
+<h2>Can I only use R in a Quarto file in RStudio?</h2>
+<p><strong>No.</strong> R is the same everywhere. Only the place you type changes.</p>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Where</th>
+<th style="text-align: left;">Good for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>R console</strong>: the Console pane, or type <code>R</code> in a terminal</td>
+<td style="text-align: left;">quick experiments</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Script</strong> (<code>.R</code>)</td>
+<td style="text-align: left;">just code; run a line at a time or the whole file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Quarto</strong> (<code>.qmd</code>)</td>
+<td style="text-align: left;">code + writing + results in one document</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Other editors</strong>: Positron, VS Code</td>
+<td style="text-align: left;">same R in a different workspace</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> handout_code.R     <span class="co"># run a whole script from a terminal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>See the difference</strong></p>
+</div>
+<div class="callout-content">
+<p><code>handout_code.R</code> in the repo holds the same code as <code>handout.qmd</code>, as a plain script. Open them side by side.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>The point: a Quarto file is one way to organize R work, not a requirement. Scripts hold only code (comments start with #); Quarto mixes code and prose and produces a finished document. Both can be run in RStudio, in Positron or VS Code, or from the command line (Rscript runs a script; quarto render builds a .qmd). Have students open handout_code.R and handout_guide.qmd side by side and compare.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
 <section id="quarto-code-writing-and-results-together" class="slide level2">
 <h2>Quarto: code, writing, and results together</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;My analysis&quot;</span></span>
-<span id="cb5-3"><a href aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb5-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-5"><a href aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href aria-hidden="true" tabindex="-1"></a>Some **text** written in Markdown.</span>
-<span id="cb5-7"><a href aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-9"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>))</span>
-<span id="cb5-10"><a href aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;My analysis&quot;</span></span>
+<span id="cb6-3"><a href aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb6-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-5"><a href aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href aria-hidden="true" tabindex="-1"></a>Some **text** written in Markdown.</span>
+<span id="cb6-7"><a href aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-9"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>))</span>
+<span id="cb6-10"><a href aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">The top block (<strong>YAML</strong>) sets the title and output format: PDF, HTML, or Word</li>
 <li class="fragment">Text goes in normal paragraphs. Code goes in <strong>chunks</strong></li>
@@ -1443,10 +1530,10 @@ display:block!important;
 <h2>Projects and the working directory</h2>
 <p><code>getwd()</code> tells you which folder R is looking in right now.</p>
 <ul>
-<li class="fragment">Open the workshop as a <strong>Project</strong>: File → Open Project → pick the <code>.Rproj</code> file</li>
+<li class="fragment">Open the workshop as a <strong>Project</strong>: double-click <code>intro-r-workshop.Rproj</code> (or File → Open Project)</li>
 <li class="fragment">Now file paths are relative to the project folder:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;data/subset_saf.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;data/subset_saf.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Avoid <code>setwd(&quot;/Users/you/Desktop/...&quot;)</code>. It breaks on every other computer.</li>
 </ul>
@@ -1466,10 +1553,10 @@ display:block!important;
 </section>
 <section id="objects-functions-packages" class="slide level2">
 <h2>Objects, functions, packages</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)       <span class="co"># &lt;- stores a value in an object called x</span></span>
-<span id="cb7-2"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)               <span class="co"># functions look like name(inputs)</span></span>
-<span id="cb7-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4</span></span>
-<span id="cb7-4"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># packages add more functions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)       <span class="co"># &lt;- stores a value in an object called x</span></span>
+<span id="cb8-2"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)               <span class="co"># functions look like name(inputs)</span></span>
+<span id="cb8-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4</span></span>
+<span id="cb8-4"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># packages add more functions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><strong>Assign</strong> with <code>&lt;-</code> (shortcut: <strong>Option/Alt + -</strong>)</li>
 <li class="fragment"><strong>Call</strong> a function with <code>name(inputs)</code></li>
@@ -1593,26 +1680,50 @@ display:block!important;
 <p><strong>NYC stop-and-frisk.</strong> Your questions at the end.</p>
 </div></div>
 </section>
+<section id="follow-along-in-the-handout" class="slide level2">
+<h2>Follow along in the handout</h2>
+<ol type="1">
+<li class="fragment">Open <strong><code>handout.qmd</code></strong> (in the project you opened earlier) and put your name in the header</li>
+<li class="fragment">Work <strong>top to bottom</strong>: run each chunk with the green ▶ (or <strong>⌘/Ctrl + Shift + Enter</strong>) and read the output</li>
+<li class="fragment"><strong>Run the code as I show it.</strong> The vectors-to-pipes code is already in the handout</li>
+<li class="fragment">Some chunks are blank on purpose. <code>handout_guide.pdf</code> shows the finished versions</li>
+<li class="fragment">Do the <strong>Workshop Questions</strong> on your own at the end</li>
+<li class="fragment"><strong>Render</strong> to PDF when you’re done</li>
+</ol>
+<aside class="notes">
+<p>Cmd/Ctrl + Enter runs the current line or selection; adding Shift runs the whole chunk. Students run the walkthrough code in the handout while you present it on the slides. Suggested pacing for the independent part (guess): reading the disaster-aid data ~15 min, Workshop Questions Q1-Q8 ~20+ min. Circulate and look for working-directory problems first.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
 <section id="working-with-vectors" class="slide level2">
 <h2>Working with vectors</h2>
 <p>We’ll take the turnout figures from Trende’s chart in the handout and <strong>combine</strong> them into vectors, one per column.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href aria-hidden="true" tabindex="-1"></a>actual_2008    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">97677100</span>, <span class="dv">16564353</span>, <span class="dv">11174365</span>, <span class="dv">2629262</span>, <span class="dv">3418041</span>)</span>
-<span id="cb8-2"><a href aria-hidden="true" tabindex="-1"></a>projected_2012 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99139605</span>, <span class="dv">17455952</span>, <span class="dv">13134504</span>, <span class="dv">3300869</span>, <span class="dv">3910201</span>)</span>
-<span id="cb8-3"><a href aria-hidden="true" tabindex="-1"></a>actual_2012    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">93033145</span>, <span class="dv">16797651</span>, <span class="dv">12921270</span>, <span class="dv">3230318</span>, <span class="dv">2584254</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href aria-hidden="true" tabindex="-1"></a>actual_2008    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">97677100</span>, <span class="dv">16564353</span>, <span class="dv">11174365</span>, <span class="dv">2629262</span>, <span class="dv">3418041</span>)</span>
+<span id="cb9-2"><a href aria-hidden="true" tabindex="-1"></a>projected_2012 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99139605</span>, <span class="dv">17455952</span>, <span class="dv">13134504</span>, <span class="dv">3300869</span>, <span class="dv">3910201</span>)</span>
+<span id="cb9-3"><a href aria-hidden="true" tabindex="-1"></a>actual_2012    <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">93033145</span>, <span class="dv">16797651</span>, <span class="dv">12921270</span>, <span class="dv">3230318</span>, <span class="dv">2584254</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>Math works <strong>element by element</strong>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href aria-hidden="true" tabindex="-1"></a>difference <span class="ot">&lt;-</span> actual_2012 <span class="sc">-</span> projected_2012</span>
-<span id="cb9-2"><a href aria-hidden="true" tabindex="-1"></a>difference</span>
-<span id="cb9-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -6106460  -658301  -213234   -70551 -1325947</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href aria-hidden="true" tabindex="-1"></a>difference <span class="ot">&lt;-</span> actual_2012 <span class="sc">-</span> projected_2012</span>
+<span id="cb10-2"><a href aria-hidden="true" tabindex="-1"></a>difference</span>
+<span id="cb10-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -6106460  -658301  -213234   -70551 -1325947</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="picking-out-elements" class="slide level2">
 <h2>Picking out elements: <code>[ ]</code></h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href aria-hidden="true" tabindex="-1"></a>actual_2008[<span class="dv">2</span>]</span>
-<span id="cb10-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 16564353</span></span>
-<span id="cb10-3"><a href aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href aria-hidden="true" tabindex="-1"></a>actual_2012[<span class="dv">1</span>] <span class="sc">-</span> projected_2012[<span class="dv">1</span>]</span>
-<span id="cb10-5"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -6106460</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href aria-hidden="true" tabindex="-1"></a>actual_2008[<span class="dv">2</span>]</span>
+<span id="cb11-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 16564353</span></span>
+<span id="cb11-3"><a href aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href aria-hidden="true" tabindex="-1"></a>actual_2012[<span class="dv">1</span>] <span class="sc">-</span> projected_2012[<span class="dv">1</span>]</span>
+<span id="cb11-5"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -6106460</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><strong>Concept check:</strong> what did each line do?</p>
 </div>
@@ -1622,28 +1733,28 @@ display:block!important;
 </section>
 <section id="common-vector-functions" class="slide level2">
 <h2>Common vector functions</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(actual_2008)   <span class="co"># 5</span></span>
-<span id="cb11-2"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(actual_2008)     <span class="co"># about 26.3 million</span></span>
-<span id="cb11-3"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(actual_2008)   <span class="co"># 11174365</span></span>
-<span id="cb11-4"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(actual_2008)    <span class="co"># 2629262 97677100</span></span>
-<span id="cb11-5"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(actual_2008)      <span class="co"># 131463121</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(actual_2008)   <span class="co"># 5</span></span>
+<span id="cb12-2"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(actual_2008)     <span class="co"># about 26.3 million</span></span>
+<span id="cb12-3"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(actual_2008)   <span class="co"># 11174365</span></span>
+<span id="cb12-4"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(actual_2008)    <span class="co"># 2629262 97677100</span></span>
+<span id="cb12-5"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(actual_2008)      <span class="co"># 131463121</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>The handout adds <code>min()</code>, <code>max()</code>, <code>prod()</code>, <code>log()</code>, and <code>unique()</code>. Try them on your own.</p>
 </div>
 </section>
 <section id="naming-vectors" class="slide level2">
 <h2>Naming vectors</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(actual_2008)    <span class="co"># no names yet</span></span>
-<span id="cb12-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NULL</span></span>
-<span id="cb12-3"><a href aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(actual_2008) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Asian&quot;</span>, <span class="st">&quot;Other&quot;</span>)</span>
-<span id="cb12-5"><a href aria-hidden="true" tabindex="-1"></a>actual_2008</span>
-<span id="cb12-6"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    White    Black Hispanic    Asian    Other</span></span>
-<span id="cb12-7"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97677100 16564353 11174365  2629262  3418041</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(actual_2008)    <span class="co"># no names yet</span></span>
+<span id="cb13-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NULL</span></span>
+<span id="cb13-3"><a href aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(actual_2008) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Asian&quot;</span>, <span class="st">&quot;Other&quot;</span>)</span>
+<span id="cb13-5"><a href aria-hidden="true" tabindex="-1"></a>actual_2008</span>
+<span id="cb13-6"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    White    Black Hispanic    Asian    Other</span></span>
+<span id="cb13-7"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97677100 16564353 11174365  2629262  3418041</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href aria-hidden="true" tabindex="-1"></a>actual_2008[<span class="st">&quot;White&quot;</span>]</span>
-<span id="cb13-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    White</span></span>
-<span id="cb13-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97677100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href aria-hidden="true" tabindex="-1"></a>actual_2008[<span class="st">&quot;White&quot;</span>]</span>
+<span id="cb14-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    White</span></span>
+<span id="cb14-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97677100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="from-vectors-to-tibbles" class="slide level2">
@@ -1658,34 +1769,34 @@ display:block!important;
 </section>
 <section id="building-a-tibble" class="slide level2 tight">
 <h2>Building a tibble</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb14-2"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Asian&quot;</span>, <span class="st">&quot;Other&quot;</span>),</span>
-<span id="cb14-3"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">actual_2008 =</span> actual_2008,</span>
-<span id="cb14-4"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">projected_2012 =</span> projected_2012,</span>
-<span id="cb14-5"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">actual_2012 =</span> actual_2012</span>
-<span id="cb14-6"><a href aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-7"><a href aria-hidden="true" tabindex="-1"></a>turnout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-2"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Asian&quot;</span>, <span class="st">&quot;Other&quot;</span>),</span>
+<span id="cb15-3"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">actual_2008 =</span> actual_2008,</span>
+<span id="cb15-4"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">projected_2012 =</span> projected_2012,</span>
+<span id="cb15-5"><a href aria-hidden="true" tabindex="-1"></a>  <span class="at">actual_2012 =</span> actual_2012</span>
+<span id="cb15-6"><a href aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-7"><a href aria-hidden="true" tabindex="-1"></a>turnout</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 4</span></span>
-<span id="cb15-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   group    actual_2008 projected_2012 actual_2012</span></span>
-<span id="cb15-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;</span></span>
-<span id="cb15-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 White       97677100       99139605    93033145</span></span>
-<span id="cb15-5"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Black       16564353       17455952    16797651</span></span>
-<span id="cb15-6"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Hispanic    11174365       13134504    12921270</span></span>
-<span id="cb15-7"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Asian        2629262        3300869     3230318</span></span>
-<span id="cb15-8"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 Other        3418041        3910201     2584254</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 4</span></span>
+<span id="cb16-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   group    actual_2008 projected_2012 actual_2012</span></span>
+<span id="cb16-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;</span></span>
+<span id="cb16-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 White       97677100       99139605    93033145</span></span>
+<span id="cb16-5"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Black       16564353       17455952    16797651</span></span>
+<span id="cb16-6"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Hispanic    11174365       13134504    12921270</span></span>
+<span id="cb16-7"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Asian        2629262        3300869     3230318</span></span>
+<span id="cb16-8"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 Other        3418041        3910201     2584254</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="try-breaking-it" class="slide level2">
 <h2>Try breaking it</h2>
 <p>What happens if you delete <code>, &quot;Other&quot;</code> so that</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href aria-hidden="true" tabindex="-1"></a>group <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Asian&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href aria-hidden="true" tabindex="-1"></a>group <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;White&quot;</span>, <span class="st">&quot;Black&quot;</span>, <span class="st">&quot;Hispanic&quot;</span>, <span class="st">&quot;Asian&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>R refuses, and tells you why:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in `tibble()`:</span></span>
-<span id="cb17-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ! Tibble columns must have compatible sizes.</span></span>
-<span id="cb17-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • Size 4: Existing data.</span></span>
-<span id="cb17-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • Size 5: Column `actual_2008`.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in `tibble()`:</span></span>
+<span id="cb18-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ! Tibble columns must have compatible sizes.</span></span>
+<span id="cb18-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • Size 4: Existing data.</span></span>
+<span id="cb18-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • Size 5: Column `actual_2008`.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Columns in a table must all be the <strong>same length</strong>. Reading error messages is a skill.</p>
@@ -1712,21 +1823,21 @@ display:block!important;
 <li class="fragment">You can <strong>chain</strong> steps instead of nesting them</li>
 </ul>
 <div class="fragment">
-<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">log</span>(x))                <span class="co"># nested: read from the inside out</span></span>
-<span id="cb18-2"><a href aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">mean</span>()      <span class="co"># piped: read left to right</span></span>
-<span id="cb18-4"><a href aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span> <span class="fu">log</span>() <span class="sc">|&gt;</span> <span class="fu">mean</span>()        <span class="co"># same thing, base R pipe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">log</span>(x))                <span class="co"># nested: read from the inside out</span></span>
+<span id="cb19-2"><a href aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">log</span>() <span class="sc">%&gt;%</span> <span class="fu">mean</span>()      <span class="co"># piped: read left to right</span></span>
+<span id="cb19-4"><a href aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span> <span class="fu">log</span>() <span class="sc">|&gt;</span> <span class="fu">mean</span>()        <span class="co"># same thing, base R pipe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="pulling-out-and-adding-columns" class="slide level2 tight">
 <h2>Pulling out and adding columns</h2>
 <p><code>$</code> pulls out one column <strong>by name</strong>: <code>object$column</code></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href aria-hidden="true" tabindex="-1"></a>turnout<span class="sc">$</span>actual_2012 <span class="sc">-</span> turnout<span class="sc">$</span>projected_2012</span>
-<span id="cb19-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -6106460  -658301  -213234   -70551 -1325947</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href aria-hidden="true" tabindex="-1"></a>turnout<span class="sc">$</span>actual_2012 <span class="sc">-</span> turnout<span class="sc">$</span>projected_2012</span>
+<span id="cb20-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -6106460  -658301  -213234   -70551 -1325947</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><code>mutate()</code> <strong>adds</strong> a column to the tibble:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> turnout <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff_2012 =</span> actual_2012 <span class="sc">-</span> projected_2012)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href aria-hidden="true" tabindex="-1"></a>turnout <span class="ot">&lt;-</span> turnout <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff_2012 =</span> actual_2012 <span class="sc">-</span> projected_2012)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Just want the vector back? Add <code>%&gt;% pull(diff_2012)</code>. The handout shows how.</p>
@@ -1734,26 +1845,26 @@ display:block!important;
 </section>
 <section id="adding-a-column-the-result" class="slide level2 tight">
 <h2>Adding a column: the result</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href aria-hidden="true" tabindex="-1"></a>turnout</span>
-<span id="cb21-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 5</span></span>
-<span id="cb21-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   group    actual_2008 projected_2012 actual_2012 diff_2012</span></span>
-<span id="cb21-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span id="cb21-5"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 White       97677100       99139605    93033145  -6106460</span></span>
-<span id="cb21-6"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Black       16564353       17455952    16797651   -658301</span></span>
-<span id="cb21-7"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Hispanic    11174365       13134504    12921270   -213234</span></span>
-<span id="cb21-8"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Asian        2629262        3300869     3230318    -70551</span></span>
-<span id="cb21-9"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 Other        3418041        3910201     2584254   -1325947</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href aria-hidden="true" tabindex="-1"></a>turnout</span>
+<span id="cb22-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 5</span></span>
+<span id="cb22-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   group    actual_2008 projected_2012 actual_2012 diff_2012</span></span>
+<span id="cb22-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span id="cb22-5"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 White       97677100       99139605    93033145  -6106460</span></span>
+<span id="cb22-6"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Black       16564353       17455952    16797651   -658301</span></span>
+<span id="cb22-7"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Hispanic    11174365       13134504    12921270   -213234</span></span>
+<span id="cb22-8"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Asian        2629262        3300869     3230318    -70551</span></span>
+<span id="cb22-9"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 Other        3418041        3910201     2584254   -1325947</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The new <code>diff_2012</code> column sits at the end.</p>
 </section>
 <section id="which-group-had-the-biggest-drop" class="slide level2 tight">
 <h2>Which group had the biggest drop?</h2>
 <p><code>arrange()</code> sorts the rows. <code>slice(1)</code> keeps the first one.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href aria-hidden="true" tabindex="-1"></a>turnout <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(diff_2012) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href aria-hidden="true" tabindex="-1"></a>turnout <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(diff_2012) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 5</span></span>
-<span id="cb23-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   group actual_2008 projected_2012 actual_2012 diff_2012</span></span>
-<span id="cb23-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span id="cb23-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 White    97677100       99139605    93033145  -6106460</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 5</span></span>
+<span id="cb24-2"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   group actual_2008 projected_2012 actual_2012 diff_2012</span></span>
+<span id="cb24-3"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;       &lt;dbl&gt;          &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span id="cb24-4"><a href aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 White    97677100       99139605    93033145  -6106460</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><strong>Does the answer surprise you? Why or why not?</strong> What other new columns would help here?</p>
@@ -1776,30 +1887,6 @@ display:block!important;
 <section id="part-5" class="title-slide slide level1 part center" data-background-color="#0f6e73" data-transition="slide">
 <h1>Part 5</h1>
 <p>Your turn</p>
-</section>
-<section id="how-to-use-the-handout" class="slide level2">
-<h2>How to use the handout</h2>
-<ol type="1">
-<li class="fragment">Open the <strong><code>.Rproj</code> file</strong> to open the workshop as a Project, then open <code>handout.qmd</code></li>
-<li class="fragment">Put your name in the header</li>
-<li class="fragment">Work <strong>top to bottom</strong>: run each chunk (<strong>⌘/Ctrl + Enter</strong> or the green ▶), and read the output</li>
-<li class="fragment">Fill in the blank chunks. <code>handout_guide.pdf</code> shows the finished walk-through section</li>
-<li class="fragment">Do the <strong>Workshop Questions</strong> on your own at the end</li>
-<li class="fragment"><strong>Render</strong> to PDF when you’re done</li>
-</ol>
-<aside class="notes">
-<p>Suggested pacing (guess): packages and vectors ~10 min (you just did these), reading the disaster-aid data ~15 min, Workshop Questions Q1-Q8 ~20+ min. Circulate and look for working-directory problems first.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
 </section>
 <section id="getting-unstuck" class="slide level2">
 <h2>Getting unstuck</h2>
@@ -1848,7 +1935,7 @@ display:block!important;
 </ul>
 <p><br></p>
 <div class="muted">
-<p>Workshop files: REPO_URL</p>
+<p>Workshop files: <a href="https://github.com/swat-ssql/intro-r-workshop">github.com/swat-ssql/intro-r-workshop</a></p>
 </div>
 </section></section>
 <section>
@@ -1948,8 +2035,60 @@ display:block!important;
 <li class="fragment">Try: <strong>Positron</strong>, if you’re curious about Python or VS Code</li>
 <li class="fragment">Keep asking questions: nobody learns R without getting stuck first</li>
 </ul>
+</section>
+<section id="keep-learning-with-the-ssql" class="slide level2">
+<h2>Keep learning with the SSQL</h2>
+<p><strong>Upcoming R workshops.</strong> Register on the SSQL website.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Workshop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Oct. 28</strong></td>
+<td style="text-align: left;">U.S. Midterm Election Modeling</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Nov. 5, 6</strong></td>
+<td style="text-align: left;">Exploring Data in R</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Nov. 9, 13</strong></td>
+<td style="text-align: left;">Data Visualization in R</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Need help with a course or project?</strong></p>
+</div>
+<div class="callout-content">
+<p>Schedule an <strong>office hours appointment</strong> at the SSQL for course or project support.</p>
+</div>
+</div>
+</div>
 <div class="fragment">
 <p><strong>Thank you!</strong></p>
+<aside class="notes">
+<p>Workshop dates as provided: Oct. 28 (Midterm Election Modeling), Nov. 5 and 6 (Exploring Data in R), Nov. 9 and 13 (Data Visualization in R). Registration is on the SSQL website. If you want a link or QR code on this slide, add it to the table or callout.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 
 </div>
 </section></section>

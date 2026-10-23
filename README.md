@@ -1,6 +1,8 @@
 # Intro to R and RStudio
 
-Materials for the SSQL workshop **Intro to R and RStudio** at Swarthmore College (October 23, 2026), for undergraduates with no prior R experience.
+Materials for the SSQL workshop **Intro to R and RStudio** at Swarthmore College (Fall 2026), for students with little or no prior R experience.
+
+**Just want the slides?** [Open the PDF](https://github.com/swat-ssql/intro-r-workshop/blob/main/slides/slides.pdf) directly on GitHub.
 
 ## Get started
 
@@ -26,7 +28,9 @@ Quarto makes PDFs with Typst, which comes with Quarto, so there is no LaTeX to i
 |:--|:--|
 | `handout.qmd` | The student handout. Some code chunks are blank on purpose |
 | `handout_guide.qmd`, `handout_guide.pdf` | The same handout with the walkthrough chunks filled in |
+| `handout_code.R` | The same code as the handout, as a plain R script (to compare a script with a Quarto file) |
 | `handout.pdf` | A rendered copy of the blank handout |
+| [`slides/slides.pdf`](https://github.com/swat-ssql/intro-r-workshop/blob/main/slides/slides.pdf) | The workshop slides as a PDF. View it right on GitHub, no download or unzipping needed |
 | `slides/slides.html` | The workshop slides. Open in a browser; press **S** for speaker notes |
 | `slides/slides.qmd`, `slides/custom.scss` | Slide source. Render with `quarto render slides/slides.qmd` |
 | `data/` | The datasets used in the handout |

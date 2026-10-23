@@ -18,7 +18,7 @@ In this handout, you'll learn the essential first steps of data analysis with th
 
 ## How to use this handout
 
--   Work **top to bottom**. Run each code chunk with the green ▶ button (or **Cmd/Ctrl + Enter**) and read the output before moving on.
+-   Work **top to bottom**. Run each code chunk with the green ▶ button (or **Cmd/Ctrl + Shift + Enter**) and read the output before moving on.
 -   Some chunks are blank on purpose. The text above each one tells you what to write.
 -   Click **Render** to turn this file into a PDF. Quarto does this with Typst, which comes with Quarto, so there is nothing extra to install.
 
