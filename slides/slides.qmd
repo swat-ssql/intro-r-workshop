@@ -418,8 +418,16 @@ Code along. Students type or copy each snippet into a new script or into handout
 ::: {.column width="33%" .fragment}
 ![](img/saf.png){.thumb}
 
-**NYC stop-and-frisk.** Your questions at the end.
+**NYC stop-and-frisk.** Your questions at the end. Gelman, Fagan, and Kiss (2007).
 :::
+:::
+
+::: {.notes}
+**Turnout.** A chart of 2008 actual, 2012 projected, and 2012 actual turnout by racial group, from Sean Trende's analysis of the 2012 election. Its point: white turnout came in well below projections, while Black turnout held up. It is a small, easy dataset for learning vectors.
+
+**Disaster aid (Healy and Malhotra 2009).** The authors link county-level disaster relief to the incumbent's vote share. Key finding: voters reward incumbents for relief spending after a disaster, but not for spending on preparedness that would prevent damage. Their argument is that voters are myopic, which gives politicians weak incentives to invest in prevention. We use an abridged version.
+
+**Stop-and-frisk (Gelman, Fagan, and Kiss 2007).** The authors analyze NYPD stops from the late 1990s. Key finding: Black and Hispanic New Yorkers were stopped more often than white New Yorkers, even after accounting for neighborhood and local crime rates. Our file is a different, later subset (2012), so the handout questions only ask students to describe the data. Remind them every row is a real person stopped by police.
 :::
 
 ## Follow along in the handout
