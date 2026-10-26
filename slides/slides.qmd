@@ -3,7 +3,7 @@ title: "Intro to R and RStudio"
 subtitle: "SSQL Workshop"
 author: "Greg Amusu"
 institute: "Swarthmore College"
-date: "October 23, 2026"
+date: "Fall 2026"
 date-format: "MMMM D, YYYY"
 format:
   revealjs:
