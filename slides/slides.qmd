@@ -4,7 +4,7 @@ subtitle: "SSQL Workshop"
 author: "Greg Amusu"
 institute: "Swarthmore College"
 date: "Fall 2026"
-date-format: "MMMM D, YYYY"
+date-format: "[Fall 2026]"
 format:
   revealjs:
     theme: [default, custom.scss]
